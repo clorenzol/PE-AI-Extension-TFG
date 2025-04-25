@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.generate-btn,
+.settings-btn {
+  padding: 10px 15px;
+  border: 2px solid #3b82f6;
+  background-color: white;
+  color: #3b82f6;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.settings-btn {
+  border-radius: 50%;
+  border-color: #4b5563;
+  color: #4b5563;
+}
+
+.settings-btn:hover {
+  background-color: #e5e7eb;
+  border-width: 2px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.textarea-container {
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.output-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+}
