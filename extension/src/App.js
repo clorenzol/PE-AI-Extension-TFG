@@ -1,45 +1,54 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Generator from './components/Generator';
 import Profile from './components/Profile';
+import Ideas from './components/Ideas';
 import { ROUTES } from './utils/routes';
 import { loadData } from './utils/localStorage';
 
 function App() {
-  const [page, setPage] = React.useState();
-  const [openAIKey, setOpenAIKey] = React.useState("test key");
-  const [info, setInfo] = React.useState("info test");
+  const [page, setPage] = useState(ROUTES.GENERATOR);
+  const [openAIKey, setOpenAIKey] = useState('');
+  const [info, setInfo] = useState('');
 
-  // Load data from local storage on component mount
   useEffect(() => {
     const fetchLocalData = async () => {
-      const fetchedInfo = await loadData("info");
-      const fetchedAIKey = await loadData("openAIKey");
-
-      setInfo(fetchedInfo);
-      setOpenAIKey(fetchedAIKey);
+      const fetchedInfo  = await loadData('info');
+      const fetchedKey   = await loadData('openAIKey');
+      if (fetchedInfo)  setInfo(fetchedInfo);
+      if (fetchedKey)   setOpenAIKey(fetchedKey);
     };
-
     fetchLocalData();
   }, []);
 
-  
-    switch (page) {
-      case ROUTES.GENERATOR:
-        return <Generator setPage={setPage} info={info} openAIKey={openAIKey} />;
-      case ROUTES.PROFILE:
-        return <Profile
+  switch (page) {
+    case ROUTES.GENERATOR:
+      return (
+        <Generator
+          setPage={setPage}
+          openAIKey={openAIKey}
+        />
+      );
+    case ROUTES.PROFILE:
+      return (
+        <Profile
           setPage={setPage}
           info={info}
           setInfo={setInfo}
           openAIKey={openAIKey}
           setOpenAIKey={setOpenAIKey}
-        />;
-      default:
-        return <Generator setPage={setPage} info={info} openAIKey={openAIKey} />;
+        />
+      );
+    case ROUTES.IDEAS:
+      return <Ideas setPage={setPage} />;
+    default:
+      return (
+        <Generator
+          setPage={setPage}
+          openAIKey={openAIKey}
+        />
+      );
   }
-  
 }
 
 export default App;

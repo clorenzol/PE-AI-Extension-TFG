@@ -43,23 +43,29 @@ function Profile({ setPage, info, setInfo, openAIKey, setOpenAIKey }) {
 
             <div className="form-group">
                 <label htmlFor="info" className="form-label">
-                        Your questions and files
+                        Summary & Report
                     </label>
                     <textarea
                         id="info"
                         name="info"
                         rows={8}
                         className="form-textarea"
-                        placeholder="Paste the structure you want to use for the report"
+                        placeholder="E.g. extract AUM, IRR, deal summaries, portfolio company key facts…"
                         defaultValue={info}
             />
             </div>
 
-            <div className="save-container">
-            <button type="submit" className="save-button">
-                Save
-            </button>
-            </div>
+            <div className="button-row">
+                <button
+                type="button"
+                className="ideas-button"
+                onClick={() => setPage(ROUTES.IDEAS)}>
+                        View Prompt Ideas
+                    </button>
+                    <button type="submit" className="save-button">
+                        Save
+                    </button>
+                </div>
         </form>
         </div>
     );

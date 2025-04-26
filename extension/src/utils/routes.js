@@ -1,4 +1,5 @@
 export const ROUTES = {
   GENERATOR: "GENERATOR",
-  PROFILE: "PROFILE",
+  PROFILE:   "PROFILE",
+  IDEAS:     "IDEAS"
 };

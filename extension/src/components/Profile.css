@@ -27,11 +27,10 @@
 }
 
 .back-button:hover {
-  background-color: #e5e7eb; 
-  border-color: #1f2937;     
-  color: #1f2937;            
+  background-color: #e5e7eb;
+  border-color: #1f2937;
+  color: #1f2937;
 }
-
 
 .profile-form {
   display: flex;
@@ -65,14 +64,36 @@
   resize: vertical;
 }
 
-.save-container {
-  text-align: center;
+/* New flex row for buttons */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
 }
 
+.ideas-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #10b981;    /* emerald-500 */
+  border-radius: 6px;
+  background-color: white;
+  color: #10b981;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ideas-button:hover {
+  background-color: #10b981;
+  color: white;
+  border-color: #059669;         /* emerald-600 */
+}
+
+/* Reuse or slightly adjust existing Save button */
 .save-button {
   padding: 10px 20px;
   font-size: 16px;
-  border: 2px solid #3b82f6;
+  border: 2px solid #3b82f6;     /* blue-500 */
   border-radius: 6px;
   background-color: white;
   color: #3b82f6;
@@ -81,7 +102,7 @@
 }
 
 .save-button:hover {
-  background-color: #3b82f6; 
-  color: white;             
-  border-color: #2563eb;    
+  background-color: #3b82f6;
+  color: white;
+  border-color: #2563eb;         /* blue-600 */
 }

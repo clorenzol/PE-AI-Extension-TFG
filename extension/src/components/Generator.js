@@ -11,11 +11,11 @@ function Generator({ setPage, openAIKey }) {
   const [infoPage, setInfoPage] = useState("");
 
   useEffect(() => {
-    const fetchPageContent = async () => {
-      const content = await loadData("pageContent");
+    const fetchTemplate = async () => {
+      const content = await loadData("info");
       setPageContent(content);
     };
-    fetchPageContent();
+    fetchTemplate();
   }, []);
 
   const handleGenerate = async () => {
@@ -35,10 +35,7 @@ function Generator({ setPage, openAIKey }) {
   return (
     <div className="container">
       <div className="header">
-        <button
-          onClick={() => handleGenerate()}
-          className="generate-btn"
-        >
+        <button onClick={handleGenerate} className="generate-btn">
           {isLoading ? "Generating..." : "Generate"}
         </button>
         <h2 className="title">Private Equity Info Generator</h2>
