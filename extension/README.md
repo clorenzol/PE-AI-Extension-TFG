@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+Equity Knowledge Hub is a lightweight Chrome extension that streamlines private-equity research by scraping any webpage’s visible text and using your OpenAI API key to generate concise, actionable investment reports. Simply install the extension, enter your API key, browse to a target company or news page, and click “Generate”, the tool transforms fragmented financial data into clear insights on business models, key metrics, risks, and growth opportunities, helping PE professionals make faster, more informed decisions.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Steps for using Equity Knowledge Hub chatGPT
 
-## Available Scripts
+## Installation
+1. Download the Equity Knowledge Hub ChatGPT Chrome Extension from the Chrome Web Store (link to be provided).
+2. Install the extension by following the on-screen instructions.
+3. After installation, you will see a bot icon in your Chrome browser's extension area.
 
-In the project directory, you can run:
+## Configuration
+1. Click on the Equity Knowledge Hub ChatGPT icon in your Chrome browser to open the extension's settings.
+2. In the settings, enter your OpenAI API key and write what you would like to gather from the page.
+3. Save your settings to enable the generation.
 
-### `npm start`
+## Usage
+1. Navigate to a page that you want to gather insights.
+2. Click on the Equity Knowledge Hub ChatGPT icon in your Chrome browser.
+3. The extension will read the page and use your saved API key and info to generate the personalized report.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Prototype Status & Next Steps
+## Prototype:
 
-### `npm test`
+- Works in development, but production API key is currently not functioning (429 errors during testing).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Key handling is insecure in-browser; for a robust demo you’d move calls to a backend proxy to protect secrets and avoid CORS.
 
-### `npm run build`
+## Next Improvements:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Backend proxy (Node.js/Express) to securely call the OpenAI API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Structured prompts: let users select which PE report sections (e.g. Financials, Risks)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Custom data extraction: target tables or JSON from investor data sites
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### This prototype demonstrates the core concept: scrape → AI-driven analysis → actionable output, giving private equity teams a potential edge in a data-scarce market segment.

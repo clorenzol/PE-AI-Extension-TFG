@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Private Equity Info Generator",
   "version": "1.0.0",
-  "description": "A Chrome extension to gather private equity info using ChatGPT.",
+  "description": "Extract and analyze private financial data on any website using ChatGPT API.",
   "permissions": ["activeTab", "storage", "scripting"],
   "icons": {
     "16": "icon.png",
